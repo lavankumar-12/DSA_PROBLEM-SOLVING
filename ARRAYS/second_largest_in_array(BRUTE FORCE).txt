@@ -1,0 +1,76 @@
+================================
+SECOND LARGEST ELEMENT IN ARRAY
+===============================
+
+TEST CASE-1:
+
+INPUT: 5
+       1 8 3 6 7
+
+OUTPUT: 7
+==============
+TEST CASE-2:
+
+INPUT: 3
+       98 100 99
+OUTPUT: 99
+==============
+
+
+
+Program
+=======
+
+#include<bits/stdc++.h>
+using  namespace std;
+
+int main()
+{
+  int n;
+  cin>>n;
+  int arr[n];
+  for(int i=0;i<n;i++)
+  {
+    cin>>arr[i];  //reading the array elements
+  }
+
+// ARRAY IS SORTING USING BUBBLE SORT
+  
+  for(int i=0;i<n-1;i++) 
+  {
+    for(int j=0;j<n-1;j++)
+    {
+       if(arr[j]>arr[j+1])
+       {
+          int temp=arr[j];
+          arr[j]=arr[j+1];
+          arr[j+1]=temp;
+       }
+    }
+  }
+  
+    //now the array is sorted 
+    
+  int max_ele=arr[n-1]; // we know last element is largest
+  
+  int sec_max=-1; // iam intializing the sec_max with -1
+  for(int i=n-1;i>=0;i--)
+  {
+    if(arr[i]!=max_ele)
+    {
+      sec_max=arr[i];
+      break;   //if i found the element which is not equal to max element from last that is my second largest element
+    }
+  }
+  
+  cout<<sec_max; //printing the second maximum element in array
+  return 0;
+}
+
+
+===========================
+TIME AND SPACE COMPLEXITY
+
+TC: O(n^2)+O(n)
+SC: O(1)
+=========================

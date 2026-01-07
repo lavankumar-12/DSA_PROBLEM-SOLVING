@@ -1,0 +1,59 @@
+================================
+ LARGEST ELEMENT IN ARRAY
+===============================
+
+TEST CASE-1:
+
+INPUT: 5
+       1 8 3 6 7
+
+OUTPUT: 8
+==============
+
+TEST CASE-2:
+
+INPUT: 3
+       98 100 99
+OUTPUT: 100
+==============
+
+
+Program:
+=======
+
+
+#include<bits/stdc++.h>
+using  namespace std;
+
+int main()
+{
+  int n;
+  cin>>n;
+  int arr[n];
+  for(int i=0;i<n;i++)
+  {
+    cin>>arr[i];  //reading the array elements
+  }
+
+int max_ele=INT_MIN; // iam assuming that maximum element is minimum integer
+  
+  for(int i=0;i<n-1;i++) 
+  {
+     if(arr[i]>max_ele)
+     {
+       max_ele=arr[i];
+     }
+  }
+  
+
+  
+  cout<<max_ele;  //printing the  maximum element
+  return 0;
+}
+
+===========================
+TIME AND SPACE COMPLEXITY
+
+TC: O(n)
+SC: O(1)
+=========================

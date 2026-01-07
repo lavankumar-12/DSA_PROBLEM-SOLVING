@@ -1,0 +1,67 @@
+================================
+ LARGEST ELEMENT IN ARRAY
+===============================
+
+TEST CASE-1:
+
+INPUT: 5
+       1 8 3 6 7
+
+OUTPUT: 8
+==============
+
+TEST CASE-2:
+
+INPUT: 3
+       98 100 99
+OUTPUT: 100
+==============
+
+
+Program:
+=======
+
+
+
+#include<bits/stdc++.h>
+using  namespace std;
+
+int main()
+{
+  int n;
+  cin>>n;
+  int arr[n];
+  for(int i=0;i<n;i++)
+  {
+    cin>>arr[i];  //reading the array elements
+  }
+
+// ARRAY IS SORTING USING BUBBLE SORT
+  
+  for(int i=0;i<n-1;i++) 
+  {
+    for(int j=0;j<n-1;j++)
+    {
+       if(arr[j]>arr[j+1])
+       {
+          int temp=arr[j];
+          arr[j]=arr[j+1];
+          arr[j+1]=temp;
+       }
+    }
+  }
+  
+  /*now the array is sorted so,
+  the last element be the largest element in an array*/
+  
+  cout<<arr[n-1];  //printing the  maximum element
+  return 0;
+}
+
+
+===========================
+TIME AND SPACE COMPLEXITY
+
+TC: O(n^2)
+SC: O(1)
+=========================
