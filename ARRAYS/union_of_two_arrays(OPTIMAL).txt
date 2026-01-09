@@ -1,0 +1,66 @@
+===========================
+UNION OF TWO SORTED ARRAYS
+===========================
+
+Example-1:
+
+Input: arr1[]= [1,1,2,3,4,5]
+       arr2[]= [2,3,4,5,6]
+
+Output: [1,2,3,4,5,6]
+
+
+Program:
+=======
+
+vector<int> union(vector<int>& a, vector<int>& b )
+{ 
+   int i=0,j=0;
+   vector<int>union;
+   int n1=a.size(),n2=b.size();
+	
+   while(i<n1 && j<n2)
+   {
+	if(a[i]<=b[j])
+	{
+	    if(union.back()!=a[i] || union.size()==0)
+	     {
+		union.push_back(a[i]);
+	     }
+	  i++;
+	}
+	else
+	{
+	  if(union.back()!=b[j] || union.size()==0)
+	     {
+		union.push_back(b[j]);
+	     }
+	  j++;
+	}
+   }
+   while(i<n1)
+   {
+     if(union.back()!=a[i] || union.size()==0)
+     {
+	union.push_back(a[i]);
+     }
+     i++;
+   }
+   while(j<n2)
+   {
+     if(union.back()!=b[j] || union.size()==0)
+	     {
+		union.push_back(b[j]);
+	     }
+	  j++;
+    }
+return union;
+}
+
+=============
+TC: O(n1+n2)
+SC: O(n1+n2) //it is used for storing answer not for logic
+============
+
+     
+

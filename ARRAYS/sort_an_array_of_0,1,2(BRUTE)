@@ -1,0 +1,5 @@
+void sort_an_array_of_0,1,2(vector<int>& a)
+{
+    sort(a.begin(),a.end());
+    return;
+}

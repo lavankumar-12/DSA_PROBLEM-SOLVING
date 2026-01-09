@@ -1,0 +1,33 @@
+===========================
+UNION OF TWO SORTED ARRAYS
+===========================
+
+Example-1:
+
+Input: arr1[]= [1,1,2,3,4,5]
+       arr2[]= [2,3,4,5,6]
+
+Output: [1,2,3,4,5,6]
+
+
+Program:
+=======
+
+vector<int> union(vector<int>& arr1,vector<int>& arr2)
+{
+    set<int>s;
+    for(int i=0;i<arr1.size();i++)
+	s.insert(arr1[i]);
+    for(int i=0;i<arr1.size();i++)
+	s.insert(arr2[i]);
+    
+    vector<int>union;
+	for(auto k:s)
+	   union.push_back(k);
+return union;
+}
+
+
+===========
+TC: O(n1logn1)+O(n2logn2)+O(n1+n2)
+SC: O(n1+n2)

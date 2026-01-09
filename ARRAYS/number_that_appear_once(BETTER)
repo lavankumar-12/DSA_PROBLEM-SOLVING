@@ -1,0 +1,16 @@
+int number_that_appear_once(vector<int>& a)
+{
+    map<int,int> mpp;
+    for(int i=0;i<a.size();i++)
+    {
+        mpp[a[i]]++;
+    }
+    for(auto it:mpp)
+    {
+        if(it.second==1)
+        {
+            return it.first;
+        }
+    }
+    return -1;
+}

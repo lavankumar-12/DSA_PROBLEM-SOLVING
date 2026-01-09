@@ -1,0 +1,19 @@
+vector<int> intersection(vector<int>& a, vector<int>& b)
+{
+    vector<int>res;
+    int n1=a.size(),n2=b.size();
+    for(int i=0;i<n1;i++)
+    {
+      for(int j=0;j<n2;j++)
+      {
+         if(a[i]==b[j] && vis[i]==0)
+	 {
+           res.push_back(a[i]);
+	   vis[j]=1;
+	   break;
+	 }
+         if(b[j]>a[i]) break;
+      }
+    }  
+return res;
+}

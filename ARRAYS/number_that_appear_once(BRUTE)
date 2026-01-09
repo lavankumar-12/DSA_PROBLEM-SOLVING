@@ -1,0 +1,20 @@
+int number_that_appear_once(vector<int>& a)
+{
+    int n=a.size();
+    for(int i=0;i<n;i++)
+    {
+        int count=;
+        for(int j=0;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                count++;
+            }
+        }
+        if(count==1)
+        {
+            return a[i];
+        }
+    }
+    return -1;
+}

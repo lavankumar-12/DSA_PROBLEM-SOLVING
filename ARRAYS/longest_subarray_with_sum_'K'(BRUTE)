@@ -1,0 +1,18 @@
+int longest_subarray_with_sum_k(vector<int>& a,int k)
+{
+    int n=a.size();
+    int max_length=0;
+    for(int i=0;i<n;i++)
+    {
+        int sum=0;
+        for(int j=i;j<n;j++)
+        {
+            sum+=a[j];
+            if(sum==k)
+            {
+                max_length=max(max_length,j-i+1);
+            }
+        }
+    }
+    return max_length;
+}
