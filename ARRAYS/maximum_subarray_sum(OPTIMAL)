@@ -1,0 +1,16 @@
+//Kadane's Algorithm
+
+int maximum_subarray_sum(vector<int>& a)
+{
+    int n=a.size();
+    int max_sum=INT_MIN;
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {
+        sum+=a[i];
+        max_sum=max(max_sum,sum);
+        if(sum<0)
+            sum=0;
+    }
+    return max_sum;
+}
